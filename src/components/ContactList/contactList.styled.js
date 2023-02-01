@@ -16,6 +16,7 @@ export const BtnItem = styled.button`
   border-radius: 6px;
   border: none;
   width: 100px;
+  background-color: gainsboro;
 
   cursor: pointer;
   &:hover {

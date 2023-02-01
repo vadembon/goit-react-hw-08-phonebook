@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
+import { Filter } from 'components/Filter/Filter';
+import { ContactList } from 'components/ContactList/ContactList';
 import { fetchContacts } from 'redux/contacts/operations';
 import { getIsLoading } from 'redux/contacts/selectors';
+import { Loader, BoxForm } from 'pages/Contacts.styled';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -13,11 +15,11 @@ export default function Contacts() {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <>
-      <title>Your tasks</title>
+    <BoxForm>
       <ContactForm />
-      <div>{isLoading && 'Request in progress...'}</div>
+      <Filter />
+      <Loader>{isLoading && 'Request in progress...'}</Loader>
       <ContactList />
-    </>
+    </BoxForm>
   );
 }

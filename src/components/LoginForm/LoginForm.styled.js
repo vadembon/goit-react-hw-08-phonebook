@@ -8,15 +8,10 @@ export const BoxForm = styled.div`
   border-radius: 6px;
 `;
 
-export const TitleForm = styled.h2`
-  text-align: center;
-`;
-
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
-
 export const Label = styled.label`
   font-size: 16px;
   font-weight: 500;

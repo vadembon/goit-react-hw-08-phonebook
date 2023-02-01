@@ -1,7 +1,13 @@
+import styled from 'styled-components';
 export default function Home() {
+  const BackImg = styled.div`
+    padding-top: 100px;
+    text-align: center;
+  `;
+
   return (
-    <div>
-      <h1>Task manager welcome page </h1>
-    </div>
+    <BackImg>
+      <h1>Welcome to the phonebook </h1>
+    </BackImg>
   );
 }

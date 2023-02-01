@@ -1,7 +1,5 @@
-import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
-
 import { TitleForm, Form, Label, Input, Btn } from './contactForm.styled';
 
 export const ContactForm = () => {
@@ -11,15 +9,15 @@ export const ContactForm = () => {
     evt.preventDefault();
     const form = evt.target;
     const newContact = {
-      id: nanoid,
       name: form.elements.name.value,
+      number: form.elements.number.value,
     };
     dispach(addContact(newContact));
     form.reset();
   };
 
   return (
-    <div>
+    <>
       <TitleForm>Phonebook</TitleForm>
       <Form action="" onSubmit={handleSubmit}>
         <Label htmlFor="">Name</Label>
@@ -40,6 +38,6 @@ export const ContactForm = () => {
         />
         <Btn type="submit">Add contacts</Btn>
       </Form>
-    </div>
+    </>
   );
 };
